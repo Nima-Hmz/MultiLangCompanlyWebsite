@@ -1,13 +1,17 @@
 (function($) {
     'use strict';
-    $(function() {
-        $('.cancel-link').on('click', function(e) {
+
+    $(document).ready(function() {
+        $('.cancel-link').click(function(e) {
             e.preventDefault();
-            if (window.location.search.indexOf('&_popup=1') === -1) {
-                window.history.back(); // Go back if not a popup.
+            const parentWindow = window.parent;
+            if (parentWindow && typeof(parentWindow.dismissRelatedObjectModal) === 'function' && parentWindow !== window) {
+                parentWindow.dismissRelatedObjectModal();
             } else {
-                window.close(); // Otherwise, close the popup.
+                // fallback to default behavior
+                window.history.back();
             }
+            return false;
         });
     });
 })(django.jQuery);
