@@ -32,7 +32,7 @@ class Article(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name=("دسته بندی"), help_text=("دسته بندی پست خود را وارد کنید"), related_name="blog")
     title = models.CharField(max_length=200, verbose_name=("عنوان مقاله"), help_text=("عنوان مقاله را وارد کنید"))
     en_title = models.CharField(max_length=200, verbose_name=("عنوان مقاله انگلیسی"), help_text=("عنوان مقاله را وارد کنید انگلیسی"))
-    slug = models.SlugField(max_length=100, verbose_name=("آدرس مقاله"), help_text=("آدرس مقاله را میتوانید از اینجا عوض کنید،(نکته: فقط در زمان ویرایش مقاله امکان تغییر آدرس وجود دارد) اما با عوض کردن آن آدرس قبلی در دسترس نخواهد بود"))
+    slug = models.SlugField(max_length=100, verbose_name=("آدرس مقاله"),unique=True, help_text=("آدرس مقاله را میتوانید از اینجا عوض کنید،(نکته: فقط در زمان ویرایش مقاله امکان تغییر آدرس وجود دارد) اما با عوض کردن آن آدرس قبلی در دسترس نخواهد بود"))
     description = RichTextField(verbose_name=("مقاله"), help_text=("محتوای مقاله را وارد کنید"))
     en_description = RichTextField(verbose_name=("مقاله انگلیسی"), help_text=("محتوای مقاله را وارد کنید انگلیسی"))
     thumbnail = models.ImageField(upload_to='images/blog/%Y/%m/%d', verbose_name=("تصویر مقاله"), help_text=("تصویری که میخواهید به عنوان کاور مقاله قرار بگیرد را وارد کنید"))
