@@ -13,6 +13,6 @@ class ArticleAdmin(admin.ModelAdmin):
 
 
 @admin.register(Category)
-class ArticleAdmin(admin.ModelAdmin):
-    list_display = ('title', 'en_title', 'slug',  'created')
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('title', 'en_title', 'slug')
     search_fields = ("title", "en_title", "slug")

@@ -1,6 +1,7 @@
 from django.db import models
 from ckeditor.fields import RichTextField
 from django.utils import timezone
+from extensions.utils import jalali_converter
 
 # Create your models here.
 
@@ -13,8 +14,7 @@ class Category(models.Model):
     title = models.CharField(max_length=200, verbose_name=("عنوان دسته‌بندی"))
     en_title = models.CharField(max_length=200, verbose_name=("عنوان دسته‌بندی انگلیسی"))
     slug = models.SlugField(max_length=100, unique=True, verbose_name=("آدرس دسته‌بندی"))
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
+
 
     def __str__(self):
         return self.title
@@ -48,6 +48,11 @@ class Article(models.Model):
         verbose_name = ("مقاله")
         verbose_name_plural = ("مقالات")
         ordering = ['-pub_date']
+
+    def jpub_date(self):
+        return jalali_converter(self.pub_date)
+        
+    
 
 
 

@@ -5,13 +5,13 @@ from django.contrib import admin
 from .models import Category, Product
 
 @admin.register(Category)
-class ArticleAdmin(admin.ModelAdmin):
+class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name', 'en_name', 'slug')
     search_fields = ("title", "en_title", "slug")
 
 
 @admin.register(Product)
-class ArticleAdmin(admin.ModelAdmin):
-    list_display = ('name', 'en_name', 'slug',  'available', 'position', 'category')
+class ProductAdmin(admin.ModelAdmin):
+    list_display = ('name', 'en_name', 'slug',  'available', 'position', 'category', 'pub_date')
     search_fields = ("name", "en_name", "slug")
     list_filter = ("available",)

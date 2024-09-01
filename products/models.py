@@ -1,5 +1,7 @@
 from django.db import models
 from ckeditor.fields import RichTextField
+from django.utils import timezone
+from extensions.utils import jalali_converter
 
 # Create your models here.
 
@@ -34,6 +36,7 @@ class Product(models.Model):
     description = RichTextField(verbose_name="توضیحات و اطلاعات")
     en_description = RichTextField(verbose_name="توضیحات و اطلاعات انگلیسی")
     available = models.BooleanField(default=True, verbose_name="وضعیت نمایش")
+    pub_date = models.DateTimeField(default=timezone.now, verbose_name=("زمان انتشار"))
     created = models.DateTimeField(auto_now_add = True, verbose_name="ایجاد شده")
     updated = models.DateTimeField(auto_now=True, verbose_name="به‌روز شده")
     position = models.IntegerField(verbose_name="موقعیت در نمایش")
@@ -47,6 +50,10 @@ class Product(models.Model):
 
     def __str__(self) -> str:
         return self.name
+
+    
+    def jpub_date(self):
+        return jalali_converter(self.pub_date)
     
 
 
