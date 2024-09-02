@@ -28,11 +28,11 @@ class Category(models.Model):
 
 class Product(models.Model):
 
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='products', verbose_name="دسته‌بندی")
+    category = models.ManyToManyField(Category, related_name='products', verbose_name="دسته‌بندی")
     name = models.CharField(max_length=200, verbose_name="نام")
     en_name = models.CharField(max_length=200, verbose_name="نام انگلیسی")
     slug = models.SlugField(max_length=200, unique=True, verbose_name="آدرس" , allow_unicode  = True)
-    image = models.ImageField(upload_to="products/%Y/%m/%d", verbose_name="عکس")
+    image = models.ImageField(upload_to="products/", verbose_name="عکس")
     description = RichTextField(verbose_name="توضیحات و اطلاعات")
     en_description = RichTextField(verbose_name="توضیحات و اطلاعات انگلیسی")
     available = models.BooleanField(default=True, verbose_name="وضعیت نمایش")
