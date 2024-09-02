@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 
 {% block content %}
@@ -25,8 +26,8 @@
       <div class="col-12 col-md-6">
         <div class="photo-section pr-5 mr-5">
           <div class=" img-border"></div>
-          <img class="" src="public/Images/power815799640.png" alt="">
-          <img class="img-number1" src="public/Images/paya-3-resize.jpg" alt="">
+          <img class="" src="{% static 'public/Images/power815799640.png' %}" alt="">
+          <img class="img-number1" src="{% static 'public/Images/paya-3-resize.jpg' %}" alt="">
         </div>
       </div>
 
@@ -40,7 +41,7 @@
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <div class="card col-12 mx-auto border-0">
-                <img src="./public/Images/paya-3-resize.jpg" class="card-img-top" alt="...">
+                <img src="{% static './public/Images/paya-3-resize.jpg' %}" class="card-img-top" alt="...">
                 <div class="card-body text-justify">
                   <h5 class="card-title">پلی استر</h5>
                   <p class="card-text">فارسی سازی ایرانیان مقیم باانگیزه</p>
@@ -74,7 +75,7 @@
     <div class="row px-0 pb-5 mt-5">
 
       <div class="col-12 col-md-5">
-        <img class="aboutUsImg d-block mt-4 mx-auto" src="./public/Images/homeslider.jpg" alt="">
+        <img class="aboutUsImg d-block mt-4 mx-auto" src="{% static './public/Images/homeslider.jpg' %}" alt="">
       </div>
       <div id="aboutUs" class="col-12 col-md-7 text-center p-3 text-white">
         <h2 class="f-yekanTitr pb-4">درباره ما</h2>
@@ -173,7 +174,7 @@
       </div>
       <div class="col-12 mb-5 mb-md-0 col-md-4">
         <div class="card mx-auto col-10 border-0">
-          <img src="./public/Images/paya-3-resize.jpg" class="card-img-top" alt="...">
+          <img src="{% static './public/Images/paya-3-resize.jpg' %}" class="card-img-top" alt="...">
           <div class="card-body text-justify">
             <h5 class="card-title">پلی استر</h5>
             <p class="card-text">فارسی سازی ایرانیان مقیم باانگیزه</p>
@@ -183,7 +184,7 @@
       </div>
       <div class="col-12 mb-5 mb-md-0 col-md-4">
         <div class="card mx-auto col-10 border-0">
-          <img src="./public/Images/power815799640.png" class="card-img-top" alt="...">
+          <img src="{% static './public/Images/power815799640.png' %}" class="card-img-top" alt="...">
           <div class="card-body text-justify">
             <h5 class="card-title">پلی استر</h5>
             <p class="card-text">فارسی سازی ایرانیان مقیم باانگیزه</p>
@@ -193,7 +194,7 @@
       </div>
       <div class="col-12 mb-5 mb-md-0 col-md-4">
         <div class="card mx-auto col-10 border-0">
-          <img src="./public/Images/paya-3-resize.jpg" class="card-img-top" alt="...">
+          <img src="{% static './public/Images/paya-3-resize.jpg' %}" class="card-img-top" alt="...">
           <div class="card-body text-justify">
             <h5 class="card-title">پلی استر</h5>
             <p class="card-text">فارسی سازی ایرانیان مقیم باانگیزه</p>

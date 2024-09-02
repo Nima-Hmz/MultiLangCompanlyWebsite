@@ -6,4 +6,4 @@ from django.views import View
 
 class TestView(View):
 	def get(self, request):
-		return render(request, 'home/1.html')
+		return render(request, 'home/index.html')
