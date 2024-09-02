@@ -40,7 +40,7 @@ class Product(models.Model):
     created = models.DateTimeField(auto_now_add = True, verbose_name="ایجاد شده")
     updated = models.DateTimeField(auto_now=True, verbose_name="به‌روز شده")
     position = models.IntegerField(verbose_name="موقعیت در نمایش")
-    more_product = models.ManyToManyField("self" , blank=True , null=True , verbose_name='محصولات مرتبط')
+    more_product = models.ManyToManyField("self" , blank=True, verbose_name='محصولات مرتبط')
 
     class Meta:
         ordering = ("-position",)
