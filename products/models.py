@@ -13,6 +13,7 @@ class Category(models.Model):
     parent = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True, related_name='children', verbose_name='دسته بندی مادر')
     description = HTMLField(verbose_name="توضیحات دسته بندی اختیاری", null=True, blank=True)
     en_description = HTMLField(verbose_name=("توضیحات دسته بندی انگلیسی اختیاری"), null=True, blank=True)
+    star = models.BooleanField(default=False, verbose_name='دسته بندی ستاره دار')
 
     class Meta:
         ordering = ('parent__id',)
