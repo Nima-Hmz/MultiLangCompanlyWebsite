@@ -1,5 +1,5 @@
 from django.db import models
-from ckeditor.fields import RichTextField
+from tinymce.models import HTMLField
 from django.utils import timezone
 from extensions.utils import jalali_converter
 
@@ -33,8 +33,8 @@ class Article(models.Model):
     title = models.CharField(max_length=200, verbose_name=("عنوان مقاله"), help_text=("عنوان مقاله را وارد کنید"))
     en_title = models.CharField(max_length=200, verbose_name=("عنوان مقاله انگلیسی"), help_text=("عنوان مقاله را وارد کنید انگلیسی"))
     slug = models.SlugField(max_length=100, verbose_name=("آدرس مقاله"),unique=True, help_text=("آدرس مقاله را میتوانید از اینجا عوض کنید،(نکته: فقط در زمان ویرایش مقاله امکان تغییر آدرس وجود دارد) اما با عوض کردن آن آدرس قبلی در دسترس نخواهد بود"))
-    description = RichTextField(verbose_name=("مقاله"), help_text=("محتوای مقاله را وارد کنید"))
-    en_description = RichTextField(verbose_name=("مقاله انگلیسی"), help_text=("محتوای مقاله را وارد کنید انگلیسی"))
+    description = HTMLField(verbose_name=("مقاله"), help_text=("محتوای مقاله را وارد کنید"))
+    en_description = HTMLField(verbose_name=("مقاله انگلیسی"), help_text=("محتوای مقاله را وارد کنید انگلیسی"))
     thumbnail = models.ImageField(upload_to='articles/', verbose_name=("تصویر مقاله"), help_text=("تصویری که میخواهید به عنوان کاور مقاله قرار بگیرد را وارد کنید"))
     pub_date = models.DateTimeField(default=timezone.now, verbose_name=("زمان انتشار"))
     created = models.DateTimeField(auto_now_add=True)

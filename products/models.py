@@ -1,5 +1,5 @@
 from django.db import models
-from ckeditor.fields import RichTextField
+from tinymce.models import HTMLField
 from django.utils import timezone
 from extensions.utils import jalali_converter
 
@@ -11,8 +11,8 @@ class Category(models.Model):
     en_name = models.CharField(max_length=200, verbose_name="نام انگلیسی")
     slug = models.SlugField(max_length=200, unique=True, verbose_name="اسلاگ", allow_unicode  = True)
     parent = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True, related_name='children', verbose_name='دسته بندی مادر')
-    description = RichTextField(verbose_name="توضیحات دسته بندی اختیاری", null=True, blank=True)
-    en_description = RichTextField(verbose_name=("توضیحات دسته بندی انگلیسی اختیاری"), null=True, blank=True)
+    description = HTMLField(verbose_name="توضیحات دسته بندی اختیاری", null=True, blank=True)
+    en_description = HTMLField(verbose_name=("توضیحات دسته بندی انگلیسی اختیاری"), null=True, blank=True)
 
     class Meta:
         ordering = ('parent__id',)
@@ -33,8 +33,8 @@ class Product(models.Model):
     en_name = models.CharField(max_length=200, verbose_name="نام انگلیسی")
     slug = models.SlugField(max_length=200, unique=True, verbose_name="آدرس" , allow_unicode  = True)
     image = models.ImageField(upload_to="products/", verbose_name="عکس")
-    description = RichTextField(verbose_name="توضیحات و اطلاعات")
-    en_description = RichTextField(verbose_name="توضیحات و اطلاعات انگلیسی")
+    description = HTMLField(verbose_name="توضیحات و اطلاعات")
+    en_description = HTMLField(verbose_name="توضیحات و اطلاعات انگلیسی")
     available = models.BooleanField(default=True, verbose_name="وضعیت نمایش")
     pub_date = models.DateTimeField(default=timezone.now, verbose_name=("زمان انتشار"))
     created = models.DateTimeField(auto_now_add = True, verbose_name="ایجاد شده")

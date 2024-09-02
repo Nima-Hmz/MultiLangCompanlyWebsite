@@ -44,9 +44,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'articles.apps.ArticlesConfig',
-    'ckeditor',
     'products.apps.ProductsConfig',
     'django_cleanup.apps.CleanupConfig',
+    'tinymce',
 ]
 
 MIDDLEWARE = [
@@ -144,17 +144,15 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 
-# CKEditor Settings
-CKEDITOR_UPLOAD_PATH = 'uploads/'
-CKEDITOR_IMAGE_BACKEND = "pillow"
-CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js' 
-CKEDITOR_CONFIGS = {
-    'default':
-        {
-            'toolbar': 'full',
-            'width': 'auto',
-            'extraPlugins': ','.join([
-                'codesnippet',
-            ]),
-        },
+TINYMCE_DEFAULT_CONFIG = {
+    'height': 360,
+    'width': 'auto',
+    'plugins': 'image imagetools link media code',
+    'toolbar': 'undo redo | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media | code',
+    'image_caption': True,
+    'image_advtab': True,
+    'file_picker_types': 'image',
+    'automatic_uploads': True,
+    'images_upload_url': '/tinymce/upload/',  # This URL will handle the image upload
+    'images_upload_credentials': True,  # Use credentials for uploading images
 }
