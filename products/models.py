@@ -8,17 +8,23 @@ from extensions.utils import jalali_converter
 
 class Category(models.Model):
     name = models.CharField(max_length=200, verbose_name="نام")
-    en_name = models.CharField(max_length=200, verbose_name="نام انگلیسی")
+    enname = models.CharField(max_length=200, verbose_name="نام انگلیسی")
     slug = models.SlugField(max_length=200, unique=True, verbose_name="اسلاگ", allow_unicode  = True)
     parent = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True, related_name='children', verbose_name='دسته بندی مادر')
     description = HTMLField(verbose_name="توضیحات دسته بندی اختیاری", null=True, blank=True)
-    en_description = HTMLField(verbose_name=("توضیحات دسته بندی انگلیسی اختیاری"), null=True, blank=True)
+    endescription = HTMLField(verbose_name=("توضیحات دسته بندی انگلیسی اختیاری"), null=True, blank=True)
     star = models.BooleanField(default=False, verbose_name='دسته بندی ستاره دار')
 
     class Meta:
         ordering = ('parent__id',)
         verbose_name = "دسته بندی"
         verbose_name_plural = "دسته بندی‌ها"
+
+    def get_name(self, lang=''):
+        return getattr(self, f'{lang}name', self.name)
+
+    def get_description(self, lang=''):
+        return getattr(self, f'{lang}description', self.description)
 
     def get_absolute_url(self):
         return reverse('search:category_filter', args=[self.slug,])
@@ -31,11 +37,11 @@ class Product(models.Model):
 
     category = models.ManyToManyField(Category, related_name='products', verbose_name="دسته‌بندی")
     name = models.CharField(max_length=200, verbose_name="نام")
-    en_name = models.CharField(max_length=200, verbose_name="نام انگلیسی")
+    enname = models.CharField(max_length=200, verbose_name="نام انگلیسی")
     slug = models.SlugField(max_length=200, unique=True, verbose_name="آدرس" , allow_unicode  = True)
     image = models.ImageField(upload_to="products/", verbose_name="عکس")
     description = HTMLField(verbose_name="توضیحات و اطلاعات")
-    en_description = HTMLField(verbose_name="توضیحات و اطلاعات انگلیسی")
+    endescription = HTMLField(verbose_name="توضیحات و اطلاعات انگلیسی")
     available = models.BooleanField(default=True, verbose_name="وضعیت نمایش")
     pub_date = models.DateTimeField(default=timezone.now, verbose_name=("زمان انتشار"))
     created = models.DateTimeField(auto_now_add = True, verbose_name="ایجاد شده")
@@ -52,7 +58,12 @@ class Product(models.Model):
     def __str__(self) -> str:
         return self.name
 
-    
+    def get_name(self, lang=''):
+        return getattr(self, f'{lang}name', self.name)
+
+    def get_description(self, lang=''):
+        return getattr(self, f'{lang}description', self.description)
+
     def jpub_date(self):
         return jalali_converter(self.pub_date)
     

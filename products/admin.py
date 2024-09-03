@@ -6,12 +6,12 @@ from .models import Category, Product
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('name', 'en_name', 'slug', 'star')
-    search_fields = ("title", "en_title", "slug")
+    list_display = ('name', 'enname', 'slug', 'star')
+    search_fields = ("name", "enname", "slug")
 
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('name', 'en_name', 'slug',  'available', 'position', 'pub_date')
-    search_fields = ("name", "en_name", "slug")
+    list_display = ('name', 'enname', 'slug',  'available', 'position', 'pub_date')
+    search_fields = ("name", "enname", "slug")
     list_filter = ("available",)
