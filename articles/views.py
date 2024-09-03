@@ -7,5 +7,4 @@ from .models import Article
 
 class TestView(View):
 	def get(self, request):
-		my_object = Article.objects.get(id=3)
-		return render(request, 'articles/1.html', {'object1':my_object})
+		return render(request, 'articles/1.html')

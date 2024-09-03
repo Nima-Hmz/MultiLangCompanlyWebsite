@@ -34,11 +34,11 @@
             </label>
           </div>
           <ul class="nav-list">
-            <li onclick="onCloseMenu()" class="navItem"><a class="a-text active-li" href="#">خانه
+            <li onclick="onCloseMenu()" class="navItem"><a class="a-text active-li" href="{% url 'home:index' %}?lang={{ current_lang }}">خانه
               </a></li>
             <li onclick="onCloseMenu()" class="navItem"><a class="a-text" href="#products">محصولات</a></li>
             <li onclick="onCloseMenu()" class="navItem"><a class="a-text" href="#jobs">خدمات</a></li>
-            <li onclick="onCloseMenu()" class="navItem"><a class="a-text" href="#notes">مقالات</a></li>
+            <li onclick="onCloseMenu()" class="navItem"><a class="a-text" href="{% url 'articles:main' %}?lang={{ current_lang }}">مقالات</a></li>
             <li onclick="onCloseMenu()" class="navItem"><a class="a-text" href="#aboutUs">درباره ما</a></li>
             <li class="navItem">
               <a class="dropdown-toggle a-text" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -46,14 +46,14 @@
               </a>
               <ul class="dropdown-menu dropdown-menu-dark">
                 <li onclick="onCloseMenu()">
-                  <a class="dropdown-item active " href="#">فارسی
+                  <a class="dropdown-item active " href="?lang=fa">فارسی
                     <img class="mr-5" style="border-radius: 50%;" width="32"
                       alt="The flag of the Islamic Republic of Iran"
                       src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Flag_of_Iran.svg/32px-Flag_of_Iran.svg.png?20140922081832">
                   </a>
                 </li>
                 <li onclick="onCloseMenu()">
-                  <a class="dropdown-item " href="#">ENG
+                  <a class="dropdown-item " href="?lang=en">ENG
                     <img style="border-radius: 50%;" width="32"
                       alt="The flag of the Kingdom of Great Britain from 1707 to 1800."
                       src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Flag_of_Great_Britain_%281707%E2%80%931800%29.svg/32px-Flag_of_Great_Britain_%281707%E2%80%931800%29.svg.png?20240117144422">
