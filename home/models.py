@@ -75,23 +75,23 @@ class Services(models.Model):
 	title = models.CharField(verbose_name='عنوان', max_length=200)
 	entitle = models.CharField(verbose_name='عنوان انگلیسی', max_length=200)
 
-	image1 = models.ImageField(upload_to='services/', verbose_name=("تصویر1 از سمت چپ"))
+	image1 = models.TextField(verbose_name=("تصویر1 از سمت چپ"))
 	description1 = models.CharField(verbose_name='توضیحات عکس ۱', max_length=200)
 	endescription1 = models.CharField(verbose_name='توضیحات عکس ۱ انگلیسی', max_length=200)
 
-	image2 = models.ImageField(upload_to='services/', verbose_name=("تصویر2 از سمت چپ"))
+	image2 = models.TextField(verbose_name=("تصویر2 از سمت چپ"))
 	description2 = models.CharField(verbose_name='توضیحات عکس 2', max_length=200)
 	endescription2 = models.CharField(verbose_name='توضیحات عکس 2 انگلیسی', max_length=200)
 
-	image3 = models.ImageField(upload_to='services/', verbose_name=("تصویر3 از سمت چپ"))
+	image3 = models.TextField(verbose_name=("تصویر3 از سمت چپ"))
 	description3 = models.CharField(verbose_name='توضیحات عکس 3', max_length=200)
 	endescription3 = models.CharField(verbose_name='توضیحات عکس 3 انگلیسی', max_length=200)
 
-	image4 = models.ImageField(upload_to='services/', verbose_name=("تصویر4 از سمت چپ"))
+	image4 = models.TextField(verbose_name=("تصویر4 از سمت چپ"))
 	description4 = models.CharField(verbose_name='توضیحات عکس 4', max_length=200)
 	endescription4 = models.CharField(verbose_name='توضیحات عکس 4 انگلیسی', max_length=200)
 
-	image5 = models.ImageField(upload_to='services/', verbose_name=("تصویر5 از سمت چپ"))
+	image5 = models.TextField(verbose_name=("تصویر5 از سمت چپ"))
 	description5 = models.CharField(verbose_name='توضیحات عکس 5', max_length=200)
 	endescription5 = models.CharField(verbose_name='توضیحات عکس 5 انگلیسی', max_length=200)
 
