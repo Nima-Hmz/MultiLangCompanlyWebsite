@@ -9,25 +9,17 @@
     <div class="row  pr-4 p-md-auto text-light text-center text-md-right">
       <div class=" col-12 col-md-6 mt-5">
         <div class="mt-5 pt-5">
-          <h2 class=" f-yekanTitr">گروه مهندسی پایا افزار فلز</h2>
-          <p class="text mt-4 ">گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر
-            کردن صفحه و
-            ارایه
-            اولیه شکل
-            ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر
-            متن باشد. معمولا طراحان گرافیک برای صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند تا صرفا
-            به مشتری یا صاحب کار خود نشان دهند که صفحه طراحی یا صفحه بندی شده بعد از اینکه متن در آن قرار گیرد چگونه
-            به نظر می‌رسد و قلم‌ها و اندازه‌بندی‌ها چگونه در نظر گرفته شده‌است. از آنجایی که طراحان عموما نویسنده متن
-            نیستند و وظیفه رعایت حق تکثیر متون را ندارند و در همان حال کار آنها به نوعی وابسته به متن می‌باشد آنها با
-            استفاده از محتویات ساختگی، صفحه گرافیکی خود را صفحه‌آرایی می‌کنند تا مرحله طراحی و صفحه‌بندی را به پایان
-            برند.</p>
+
+          <h2 class=" f-yekanTitr">{{index_title}}</h2>
+
+          <p class="text mt-4 ">{{index_description|safe}}</p>
         </div>
       </div>
       <div class="col-12 col-md-6">
         <div class="photo-section pr-5 mr-5">
           <div class=" img-border"></div>
-          <img class="" src="{% static 'public/Images/power815799640.png' %}" alt="">
-          <img class="img-number1" src="{% static 'public/Images/paya-3-resize.jpg' %}" alt="">
+          <img class="" src="{{ index_image2.url }}" alt="">
+          <img class="img-number1" src="{{ index_image1.url }}" alt="">
         </div>
       </div>
 
@@ -75,19 +67,11 @@
     <div class="row px-0 pb-5 mt-5">
 
       <div class="col-12 col-md-5">
-        <img class="aboutUsImg d-block mt-4 mx-auto" src="{% static './public/Images/homeslider.jpg' %}" alt="">
+        <img class="aboutUsImg d-block mt-4 mx-auto" src="{{about_image.url}}" alt="">
       </div>
       <div id="aboutUs" class="col-12 col-md-7 text-center p-3 text-white">
-        <h2 class="f-yekanTitr pb-4">درباره ما</h2>
-        <p class="text">شرکت فنی مهندسی پایا افزار فلز با بهره گیری از کادر متخصص و مجرب و با هدف کمک به بهبود کیفیت
-          تولید و حمایت
-          از قالبسازان و تولیدکنندگان وصنعتگران محترم ، شرایط ویژه ای را برای همکاران در نظر گرفته است .</p>
-        <p class="text">
-          politeknik ترکیه در ایران بواسطه شرکت فنی مهندسی پایا افزار فلز politeknik ترکیه با سابقه 30 ساله در زمینه
-          تولید مواد شیمیایی آندایزینگ آلومینیوم و زیرسازی پودری ، راه اندازی خطوط آندایزینگ قدمی نو درارتقاء سطح کیفی
-          و کمی تولیدات کشور ترکیه نموده است .شرکت پایا افزار فلز از سال 2007 میلادی فعالیت مشترک با شرکت politeknik
-          را آغاز نمود .
-        </p>
+        <h2 class="f-yekanTitr pb-4">{{about_title}}</h2>
+        <p class="text">{{about_description|safe}}</p>
       </div>
 
     </div>

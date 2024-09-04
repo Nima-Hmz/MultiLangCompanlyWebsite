@@ -5,21 +5,22 @@ from tinymce.models import HTMLField
 
 
 class FirstTitle(models.Model):
-	title = models.CharField(verbose_name='عنوان', max_length=200)
-	entitle = models.CharField(verbose_name='عنوان انگلیسی', max_length=200)
-	description = HTMLField(verbose_name='توضیحات')
-	endescription = HTMLField(verbose_name='توضیحات انگلیسی')
-	image = models.ImageField(upload_to='first_title/', verbose_name=("تصویر"))
-	location = models.TextField(verbose_name='موقعیت مکانی')
+	fa_title = models.CharField(verbose_name='عنوان', max_length=200)
+	en_title = models.CharField(verbose_name='عنوان انگلیسی', max_length=200)
+	fa_description = HTMLField(verbose_name='توضیحات')
+	en_description = HTMLField(verbose_name='توضیحات انگلیسی')
+	image = models.ImageField(upload_to='first_title/', verbose_name=("تصویر 1"))
+	image2 = models.ImageField(upload_to='first_title/', verbose_name=("تصویر 2 آپشنال"), null=True, blank=True)
+
 
 	def __str__(self):
-		return self.title
+		return self.fa_title
 
-	def get_title(self, lang=''):
-		return getattr(self, f'{lang}title', self.title)
+	def get_title(self, lang='fa'):
+		return getattr(self, f'{lang}_title', self.fa_title)
 
-	def get_description(self, lang=''):
-		return getattr(self, f'{lang}description', self.description)
+	def get_description(self, lang='fa'):
+		return getattr(self, f'{lang}_description', self.fa_description)
 
 	class Meta:
 		verbose_name = ("صفحه اصلی")
@@ -27,20 +28,20 @@ class FirstTitle(models.Model):
 
 
 class AboutUs(models.Model):
-	title = models.CharField(verbose_name='عنوان', max_length=200)
-	entitle = models.CharField(verbose_name='عنوان انگلیسی', max_length=200)
-	description = HTMLField(verbose_name='توضیحات')
-	endescription = HTMLField(verbose_name='توضیحات انگلیسی')
+	fa_title = models.CharField(verbose_name='عنوان', max_length=200)
+	en_title = models.CharField(verbose_name='عنوان انگلیسی', max_length=200)
+	fa_description = HTMLField(verbose_name='توضیحات')
+	en_description = HTMLField(verbose_name='توضیحات انگلیسی')
 	image = models.ImageField(upload_to='about_us/', verbose_name=("تصویر"))
 
 	def __str__(self):
-		return self.title
+		return self.fa_title
 
-	def get_title(self, lang=''):
-		return getattr(self, f'{lang}title', self.title)
+	def get_title(self, lang='fa'):
+		return getattr(self, f'{lang}_title', self.fa_title)
 
-	def get_description(self, lang=''):
-		return getattr(self, f'{lang}description', self.description)
+	def get_description(self, lang='fa'):
+		return getattr(self, f'{lang}_description', self.fa_description)
 
 	class Meta:
 		verbose_name = ("درباره ما")
@@ -48,22 +49,23 @@ class AboutUs(models.Model):
 
 
 class ContactUs(models.Model):
-	title = models.CharField(verbose_name='عنوان', max_length=200)
-	entitle = models.CharField(verbose_name='عنوان انگلیسی', max_length=200)
+	fa_title = models.CharField(verbose_name='عنوان', max_length=200)
+	en_title = models.CharField(verbose_name='عنوان انگلیسی', max_length=200)
 	phone_number = models.CharField(max_length=200, verbose_name='شماره تماس')
 	email = models.EmailField(verbose_name='ایمیل')
-	address = models.TextField(verbose_name='آدرس')
-	enaddress = models.TextField(verbose_name='آدرس انگلایسی')
+	fa_description = models.TextField(verbose_name='آدرس')
+	en_description = models.TextField(verbose_name='آدرس انگلایسی')
+	location = models.TextField(verbose_name='موقعیت مکانی')
 
 
 	def __str__(self):
-		return self.title
+		return self.fa_title
 
-	def get_title(self, lang=''):
-		return getattr(self, f'{lang}title', self.title)
+	def get_title(self, lang='fa'):
+		return getattr(self, f'{lang}_title', self.fa_title)
 
-	def get_address(self, lang=''):
-		return getattr(self, f'{lang}address', self.address)
+	def get_description(self, lang='fa'):
+		return getattr(self, f'{lang}_description', self.fa_description)
 
 	class Meta:
 		verbose_name = ("تماس با ما")
@@ -72,38 +74,38 @@ class ContactUs(models.Model):
 
 
 class Services(models.Model):
-	title = models.CharField(verbose_name='عنوان', max_length=200)
-	entitle = models.CharField(verbose_name='عنوان انگلیسی', max_length=200)
+	fa_title = models.CharField(verbose_name='عنوان', max_length=200)
+	en_title = models.CharField(verbose_name='عنوان انگلیسی', max_length=200)
 
 	image1 = models.TextField(verbose_name=("تصویر1 از سمت چپ"))
-	description1 = models.CharField(verbose_name='توضیحات عکس ۱', max_length=200)
-	endescription1 = models.CharField(verbose_name='توضیحات عکس ۱ انگلیسی', max_length=200)
+	fa_description1 = models.CharField(verbose_name='توضیحات عکس ۱', max_length=200)
+	en_description1 = models.CharField(verbose_name='توضیحات عکس ۱ انگلیسی', max_length=200)
 
 	image2 = models.TextField(verbose_name=("تصویر2 از سمت چپ"))
-	description2 = models.CharField(verbose_name='توضیحات عکس 2', max_length=200)
-	endescription2 = models.CharField(verbose_name='توضیحات عکس 2 انگلیسی', max_length=200)
+	fa_description2 = models.CharField(verbose_name='توضیحات عکس 2', max_length=200)
+	en_description2 = models.CharField(verbose_name='توضیحات عکس 2 انگلیسی', max_length=200)
 
 	image3 = models.TextField(verbose_name=("تصویر3 از سمت چپ"))
-	description3 = models.CharField(verbose_name='توضیحات عکس 3', max_length=200)
-	endescription3 = models.CharField(verbose_name='توضیحات عکس 3 انگلیسی', max_length=200)
+	fa_description3 = models.CharField(verbose_name='توضیحات عکس 3', max_length=200)
+	en_description3 = models.CharField(verbose_name='توضیحات عکس 3 انگلیسی', max_length=200)
 
 	image4 = models.TextField(verbose_name=("تصویر4 از سمت چپ"))
-	description4 = models.CharField(verbose_name='توضیحات عکس 4', max_length=200)
-	endescription4 = models.CharField(verbose_name='توضیحات عکس 4 انگلیسی', max_length=200)
+	fa_description4 = models.CharField(verbose_name='توضیحات عکس 4', max_length=200)
+	en_description4 = models.CharField(verbose_name='توضیحات عکس 4 انگلیسی', max_length=200)
 
 	image5 = models.TextField(verbose_name=("تصویر5 از سمت چپ"))
-	description5 = models.CharField(verbose_name='توضیحات عکس 5', max_length=200)
-	endescription5 = models.CharField(verbose_name='توضیحات عکس 5 انگلیسی', max_length=200)
+	fa_description5 = models.CharField(verbose_name='توضیحات عکس 5', max_length=200)
+	en_description5 = models.CharField(verbose_name='توضیحات عکس 5 انگلیسی', max_length=200)
 
 
 	def __str__(self):
-		return self.title
+		return self.fa_title
 
-	def get_title(self, lang=''):
-		return getattr(self, f'{lang}title', self.title)
+	def get_title(self, lang='fa'):
+		return getattr(self, f'{lang}_title', self.fa_title)
 
-	def get_description(self, lang='', number=1):
-		return getattr(self, f'{lang}description{number}')
+	def get_description(self, lang='fa', number=1):
+		return getattr(self, f'{lang}_description{number}', self.fa_description1)
 
 	class Meta:
 		verbose_name = ("خدمات")
