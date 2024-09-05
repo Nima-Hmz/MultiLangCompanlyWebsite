@@ -57,5 +57,18 @@ class IndexView(View):
 
 class AboutUsView(View):
 	def get(self, request):
-		context = {}
+		lang = request.GET.get('lang', 'fa')
+		
+		valid_langs = ['en', 'fa']
+		if lang not in valid_langs:
+			lang = 'fa'
+
+		aboutus = AboutUs.objects.first()
+		context = {
+
+			'about_image':aboutus.image
+
+		}
+		context.update(language_switcher(aboutus, lang, "about"))
+
 		return render(request, 'home/aboutus.html', context)
