@@ -39,16 +39,15 @@ class IndexView(View):
 		}
 
 		context.update(language_switcher(first_title, lang, "index"))
-		context.update(language_switcher(aboutus, lang, "about"))
 
 		for i, obj in enumerate(Category.objects.filter(star=True)[:5], start=1):
 			context.update(language_switcher(obj, lang, "category", f"{i}"))
 			context.update({f'category_image{i}':obj.image})
+			context.update({f'category_slug{i}':obj.slug})
 
 		for i, obj in enumerate(Article.objects.all()[:3], start=1):
 			context.update(language_switcher(obj, lang, "article", f"{i}"))
 			context.update({f'article_image{i}':obj.thumbnail})
-
 
 
 		return render(request, 'home/index.html', context=context)

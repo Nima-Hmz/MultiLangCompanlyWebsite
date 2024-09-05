@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}     
+
+{% block content %} 
+
+
+        <main class="row mt-5 pt-5">
+            <div class="col-12 col-md-8 mx-auto">
+                <!-- start table -->
+                <table class="table   bg-green table-dark table-striped table-hover px-4">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">{% if current_lang == 'fa' %}نام محصول{% else %}product title{% endif %}</th>
+                            <th scope="col">{% if current_lang == 'fa' %}ابعاد{% else %}product size{% endif %}</th>
+                            <th scope="col">{% if current_lang == 'fa' %}مشاهده جزییات{% else %}see more{% endif %}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    	{% for product in products %}
+                    		{% if current_lang == 'fa' %}
+		                        <tr>
+		                            <th scope="row">{{ forloop.counter }}</th>
+		                            <td>{{ product.fa_title }}</td>
+		                            <td>Otto</td>
+		                            <td>
+		                                <a href="#">مشاهده بیشتر</a>
+		                            </td>
+		                            </a>
+		                        </tr>
+	                        {% else %}
+		                        <tr>
+		                            <th scope="row">{{ forloop.counter }}</th>
+		                            <td>{{ product.en_title }}</td>
+		                            <td>Otto</td>
+		                            <td>
+		                                <a href="#">مشاهده بیشتر</a>
+		                            </td>
+		                            </a>
+		                        </tr>
+	                        {% endif %}
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+                <!-- end table -->
+            </div>
+        </main>
+
+
+{% endblock %}

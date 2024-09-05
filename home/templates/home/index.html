@@ -36,8 +36,8 @@
                   <img src="{{ category_image1.url }}" class="card-img-top" alt="...">
                   <div class="card-body text-justify">
                     <h5 class="card-title">{{ category_title1 }}</h5>
-                    <p class="card-text">{{ category_description1|safe }}</p>
-                    <a href="#" class="btn btn-yellow">مشاهده بیشتر</a>
+                    <p class="card-text">{{ category_description1|truncatewords:50|safe }}</p>
+                    <a href="{% url 'products:product_list' category_slug1 %}?lang={{ current_lang }}" class="btn btn-yellow">{% if current_lang == 'fa' %}مشاهده بیشتر{% else %}see more{% endif %}</a>
                   </div>
                 </div>
               </div>
@@ -46,8 +46,8 @@
                   <img src="{{ category_image2.url }}" class="card-img-top" alt="...">
                   <div class="card-body text-justify">
                     <h5 class="card-title">{{ category_title2 }}</h5>
-                    <p class="card-text">{{ category_description2|safe }}</p>
-                    <a href="#" class="btn btn-yellow">مشاهده بیشتر</a>
+                    <p class="card-text">{{ category_description2|truncatewords:50|safe }}</p>
+                    <a href="{% url 'products:product_list' category_slug2 %}?lang={{ current_lang }}" class="btn btn-yellow">{% if current_lang == 'fa' %}مشاهده بیشتر{% else %}see more{% endif %}</a>
                   </div>
                 </div>
 
@@ -57,8 +57,8 @@
                   <img src="{{ category_image3.url }}" class="card-img-top" alt="...">
                   <div class="card-body text-justify">
                     <h5 class="card-title">{{ category_title3 }}</h5>
-                    <p class="card-text">{{ category_description3|safe }}</p>
-                    <a href="#" class="btn btn-yellow">مشاهده بیشتر</a>
+                    <p class="card-text">{{ category_description3|truncatewords:50|safe }}</p>
+                    <a href="{% url 'products:product_list' category_slug3 %}?lang={{ current_lang }}" class="btn btn-yellow">{% if current_lang == 'fa' %}مشاهده بیشتر{% else %}see more{% endif %}</a>
                   </div>
                 </div>
 
@@ -68,8 +68,8 @@
                   <img src="{{ category_image4.url }}" class="card-img-top" alt="...">
                   <div class="card-body text-justify">
                     <h5 class="card-title">{{ category_title4 }}</h5>
-                    <p class="card-text">{{ category_description4|safe }}</p>
-                    <a href="#" class="btn btn-yellow">مشاهده بیشتر</a>
+                    <p class="card-text">{{ category_description4|truncatewords:50|safe }}</p>
+                    <a href="{% url 'products:product_list' category_slug4 %}?lang={{ current_lang }}" class="btn btn-yellow">{% if current_lang == 'fa' %}مشاهده بیشتر{% else %}see more{% endif %}</a>
                   </div>
                 </div>
 
@@ -79,8 +79,8 @@
                   <img src="{{ category_image5.url }}" class="card-img-top" alt="...">
                   <div class="card-body text-justify">
                     <h5 class="card-title">{{ category_title5 }}</h5>
-                    <p class="card-text">{{ category_description5|safe }}</p>
-                    <a href="#" class="btn btn-yellow">مشاهده بیشتر</a>
+                    <p class="card-text">{{ category_description5|truncatewords:50|safe }}</p>
+                    <a href="{% url 'products:product_list' category_slug5 %}?lang={{ current_lang }}" class="btn btn-yellow">{% if current_lang == 'fa' %}مشاهده بیشتر{% else %}see more{% endif %}</a>
                   </div>
                 </div>
 
@@ -90,7 +90,7 @@
           <div class="swiper-pagination"></div>
         </div>
         <div class="col-12 d-flex justify-content-left px-3 mt-md-5">
-          <a href="#" class="btn btn-yellow">{% if current_lang == 'fa' %}مشاهده دسته بندی همه محصولات{% else %}more categories{% endif %}</a>
+          <a href="{% url 'products:products' %}?lang={{ current_lang }}" class="btn btn-yellow">{% if current_lang == 'fa' %}مشاهده دسته بندی همه محصولات{% else %}more categories{% endif %}</a>
         </div>
       </div>
     </div>

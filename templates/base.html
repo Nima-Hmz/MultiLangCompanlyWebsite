@@ -37,7 +37,7 @@
           <ul class="nav-list">
             <li onclick="onCloseMenu()" class="navItem"><a class="a-text active-li" href="{% url 'home:index' %}?lang={{ current_lang }}">{% if current_lang == 'fa' %}خانه{% else %}home{% endif %}
               </a></li>
-            <li onclick="onCloseMenu()" class="navItem"><a class="a-text" href="#products">{% if current_lang == 'fa' %}محصولات{% else %}Products{% endif %}</a></li>
+            <li onclick="onCloseMenu()" class="navItem"><a class="a-text" href="{% url 'products:products' %}?lang={{current_lang}}">{% if current_lang == 'fa' %}محصولات{% else %}Products{% endif %}</a></li>
 
             {% if main_index == True %}<li onclick="onCloseMenu()" class="navItem"><a class="a-text" href="#jobs">{{ services_title }}</a></li>{% endif %}
             
@@ -129,7 +129,7 @@
               <a href="#notes">{% if current_lang == 'fa' %}مقالات{% else %}Articles{% endif %}</a>
             </li>
             <li>
-              <a href="#products">{% if current_lang == 'fa' %}محصولات{% else %}Products{% endif %}</a>
+              <a href="{% url 'products:products' %}?lang={{current_lang}}">{% if current_lang == 'fa' %}محصولات{% else %}Products{% endif %}</a>
             </li>
             <li>
               <a href="#jobs">{{ services_title }}</a>
