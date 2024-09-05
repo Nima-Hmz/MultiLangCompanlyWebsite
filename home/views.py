@@ -65,7 +65,8 @@ class AboutUsView(View):
 		aboutus = AboutUs.objects.first()
 		context = {
 
-			'about_image':aboutus.image
+			'about_image':aboutus.image,
+			'about_temp':True
 
 		}
 		context.update(language_switcher(aboutus, lang, "about"))

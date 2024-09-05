@@ -22,9 +22,9 @@
 		                        <tr>
 		                            <th scope="row">{{ forloop.counter }}</th>
 		                            <td>{{ product.fa_title }}</td>
-		                            <td>Otto</td>
+		                            <td>{{ product.size }}</td>
 		                            <td>
-		                                <a href="#">مشاهده بیشتر</a>
+		                                <a href="{% url 'products:product_detail' product.slug %}?lang={{ current_lang }}">مشاهده بیشتر</a>
 		                            </td>
 		                            </a>
 		                        </tr>
@@ -32,9 +32,9 @@
 		                        <tr>
 		                            <th scope="row">{{ forloop.counter }}</th>
 		                            <td>{{ product.en_title }}</td>
-		                            <td>Otto</td>
+		                            <td>{{ product.size }}</td>
 		                            <td>
-		                                <a href="#">مشاهده بیشتر</a>
+		                                <a href="{% url 'products:product_detail' product.slug %}?lang={{ current_lang }}">see more</a>
 		                            </td>
 		                            </a>
 		                        </tr>
