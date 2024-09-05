@@ -9,6 +9,9 @@ def current_language(request):
     # plus contactus 
 
     lang = request.GET.get('lang', 'fa') 
+    valid_langs = ['en', 'fa']
+    if lang not in valid_langs:
+        lang = 'fa'
     contactus = ContactUs.objects.first()
     output = {'current_lang': lang}
     output.update(language_switcher(contactus, lang, "contact"))

@@ -11,6 +11,9 @@ from .template_manager import language_switcher
 class IndexView(View):
 	def get(self, request):
 		lang = request.GET.get('lang', 'fa')
+		valid_langs = ['en', 'fa']
+		if lang not in valid_langs:
+			lang = 'fa'
 		first_title = FirstTitle.objects.first()
 		aboutus = AboutUs.objects.first()
 		services = Services.objects.first()
@@ -31,7 +34,7 @@ class IndexView(View):
 			'services_description4':services.get_description(lang, 4),
 			'services_image5':services.image5,
 			'services_description5':services.get_description(lang, 5),
-
+			'main_index':True,
 
 		}
 
@@ -49,3 +52,10 @@ class IndexView(View):
 
 
 		return render(request, 'home/index.html', context=context)
+
+
+
+class AboutUsView(View):
+	def get(self, request):
+		context = {}
+		return render(request, 'home/aboutus.html', context)
