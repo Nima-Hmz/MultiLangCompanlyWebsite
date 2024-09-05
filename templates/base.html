@@ -1,8 +1,8 @@
 {% load static %}
 
 <!doctype html>
-<!-- <html dir="{% if current_lang == 'fa' %}rtl{% else %}ltr{% endif %}"> -->
-<html dir="rtl">
+<html dir="{% if current_lang == 'fa' %}rtl{% else %}ltr{% endif %}">
+<!-- <html dir="rtl"> -->
 
 <head>
   <meta charset="UTF-8" />
@@ -35,26 +35,26 @@
             </label>
           </div>
           <ul class="nav-list">
-            <li onclick="onCloseMenu()" class="navItem"><a class="a-text active-li" href="{% url 'home:index' %}?lang={{ current_lang }}">خانه
+            <li onclick="onCloseMenu()" class="navItem"><a class="a-text active-li" href="{% url 'home:index' %}?lang={{ current_lang }}">{% if current_lang == 'fa' %}خانه{% else %}home{% endif %}
               </a></li>
-            <li onclick="onCloseMenu()" class="navItem"><a class="a-text" href="#products">محصولات</a></li>
-            <li onclick="onCloseMenu()" class="navItem"><a class="a-text" href="#jobs">خدمات</a></li>
-            <li onclick="onCloseMenu()" class="navItem"><a class="a-text" href="{% url 'articles:main' %}?lang={{ current_lang }}">مقالات</a></li>
-            <li onclick="onCloseMenu()" class="navItem"><a class="a-text" href="#aboutUs">درباره ما</a></li>
+            <li onclick="onCloseMenu()" class="navItem"><a class="a-text" href="#products">{% if current_lang == 'fa' %}محصولات{% else %}Products{% endif %}</a></li>
+            <li onclick="onCloseMenu()" class="navItem"><a class="a-text" href="#jobs">{% if current_lang == 'fa' %}خدمات{% else %}Services{% endif %}</a></li>
+            <li onclick="onCloseMenu()" class="navItem"><a class="a-text" href="{% url 'articles:main' %}?lang={{ current_lang }}">{% if current_lang == 'fa' %}مقالات{% else %}Articles{% endif %}</a></li>
+            <li onclick="onCloseMenu()" class="navItem"><a class="a-text" href="#aboutUs">{% if current_lang == 'fa' %}درباره ما{% else %}About us{% endif %}</a></li>
             <li class="navItem">
               <a class="dropdown-toggle a-text" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                زبان
+                {% if current_lang == 'fa' %}زبان{% else %}language{% endif %}
               </a>
               <ul class="dropdown-menu dropdown-menu-dark">
                 <li onclick="onCloseMenu()">
-                  <a class="dropdown-item active " href="?lang=fa">فارسی
+                  <a class="dropdown-item {% if current_lang == 'fa' %}active{% else %}{% endif %}" href="?lang=fa">فارسی
                     <img class="mr-5" style="border-radius: 50%;" width="32"
                       alt="The flag of the Islamic Republic of Iran"
                       src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Flag_of_Iran.svg/32px-Flag_of_Iran.svg.png?20140922081832">
                   </a>
                 </li>
                 <li onclick="onCloseMenu()">
-                  <a class="dropdown-item " href="?lang=en">ENG
+                  <a class="dropdown-item {% if current_lang == 'en' %}active{% else %}{% endif %}" href="?lang=en">ENG
                     <img style="border-radius: 50%;" width="32"
                       alt="The flag of the Kingdom of Great Britain from 1707 to 1800."
                       src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Flag_of_Great_Britain_%281707%E2%80%931800%29.svg/32px-Flag_of_Great_Britain_%281707%E2%80%931800%29.svg.png?20240117144422">
@@ -111,29 +111,26 @@
                 <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
               </svg>
                     {{contact_description}}
-
-
-
             </li>
           </ul>
         </div>
       </div>
       <div class="col-12 col-md-4 text-center">
         <div class="col-10 mx-auto">
-          <h3 class="f-yekanTitr mt-5 mx-5 text-light">لینک های مفید </h3>
+          <h3 class="f-yekanTitr mt-5 mx-5 text-light">{% if current_lang == 'fa' %}لینک های مفید{% else %}quick access{% endif %}</h3>
           <ul class="list-group-ul mt-4">
             <li>
-              <a href="#aboutUs">درباه ما</a>
+              <a href="#aboutUs">{% if current_lang == 'fa' %}درباه ما{% else %}About us{% endif %}</a>
             </li>
 
             <li>
-              <a href="#notes">مقالات</a>
+              <a href="#notes">{% if current_lang == 'fa' %}مقالات{% else %}Articles{% endif %}</a>
             </li>
             <li>
-              <a href="#products">محصولات</a>
+              <a href="#products">{% if current_lang == 'fa' %}محصولات{% else %}Products{% endif %}</a>
             </li>
             <li>
-              <a href="#jobs">خدمات</a>
+              <a href="#jobs">{% if current_lang == 'fa' %}خدمات{% else %}Services{% endif %}</a>
             </li>
           </ul>
         </div>
@@ -142,7 +139,7 @@
         {% if current_lang == 'fa' %}
         <h3 class="f-yekanTitr  mx-5 text-light">لوکیشن ما</h3>
         {% else %}
-        <h3 class="f-yekanTitr  mx-5 text-light">location</h3>
+        <h3 class="f-yekanTitr  mx-5 text-light">Location</h3>
         {% endif %}
           {{contact_location|safe}}
       </div>
