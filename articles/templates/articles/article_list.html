@@ -16,7 +16,7 @@
                         <div class="card-body text-justify">
                             <h5 class="card-title">{{ article.fa_title }}</h5>
                             <p class="card-text">{{ article.fa_description|truncatewords:10|safe }}</p>
-                            <a href="#" class="btn btn-yellow">مشاهده بیشتر</a>
+                            <a href="{% url 'articles:article_detail' article.slug %}?lang=fa" class="btn btn-yellow">مشاهده بیشتر</a>
                         </div>
                     </div>
                 </div>
@@ -27,7 +27,7 @@
                         <div class="card-body text-justify">
                             <h5 class="card-title">{{ article.en_title }}</h5>
                             <p class="card-text">{{ article.en_description|truncatewords:10|safe }}</p>
-                            <a href="#" class="btn btn-yellow">see more</a>
+                            <a href="{% url 'articles:article_detail' article.slug %}?lang=en" class="btn btn-yellow">see more</a>
                         </div>
                     </div>
                 </div>
