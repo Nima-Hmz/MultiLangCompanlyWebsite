@@ -41,7 +41,7 @@
 
             {% if main_index == True %}<li onclick="onCloseMenu()" class="navItem"><a class="a-text" href="#jobs">{{ services_title }}</a></li>{% endif %}
             
-            <li onclick="onCloseMenu()" class="navItem"><a class="a-text" href="{% url 'articles:main' %}?lang={{ current_lang }}">{% if current_lang == 'fa' %}مقالات{% else %}Articles{% endif %}</a></li>
+            <li onclick="onCloseMenu()" class="navItem"><a class="a-text {% if article_temp == True %}active-li{% endif %}" href="{% url 'articles:article_list' %}?lang={{ current_lang }}">{% if current_lang == 'fa' %}مقالات{% else %}Articles{% endif %}</a></li>
             <li onclick="onCloseMenu()" class="navItem"><a class="a-text {% if about_temp == True %}active-li{% endif %}" href="{% url 'home:aboutus' %}?lang={{current_lang}}">{{ about_title }}</a></li>
             <li class="navItem">
               <a class="dropdown-toggle a-text" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -126,7 +126,7 @@
             </li>
 
             <li>
-              <a href="#notes">{% if current_lang == 'fa' %}مقالات{% else %}Articles{% endif %}</a>
+              <a href="{% url 'articles:article_list' %}?lang={{ current_lang }}">{% if current_lang == 'fa' %}مقالات{% else %}Articles{% endif %}</a>
             </li>
             <li>
               <a href="{% url 'products:products' %}?lang={{current_lang}}">{% if current_lang == 'fa' %}محصولات{% else %}Products{% endif %}</a>

@@ -5,6 +5,11 @@ from .models import Article
 # Create your views here.
 
 
-class TestView(View):
+class ArticleListView(View):
 	def get(self, request):
-		return render(request, 'articles/1.html')
+		context = {
+
+			'article_temp':True
+
+		}
+		return render(request, 'articles/article_list.html', context)

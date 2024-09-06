@@ -1,11 +1,11 @@
 from django.urls import path
-from .views import TestView
+from .views import ArticleListView
 
 
 app_name = 'articles'
 
 urlpatterns = [
 
-	path('', TestView.as_view(), name="main")
+	path('', ArticleListView.as_view(), name="article_list")
 
 ]

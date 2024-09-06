@@ -38,6 +38,7 @@ class ProductListView(View):
 		context = {
 
 			'products':products,
+			'pro_temp':True
 
 		}
 		return render(request, 'products/product_list.html', context)
@@ -55,7 +56,8 @@ class ProductDetailView(View):
 
 			"title":product.get_title(lang),
 			"description":product.get_description(lang),
-			"image": product.image
+			"image": product.image,
+			'pro_temp':True
 
 		}
 		return render(request, 'products/product_detail.html', context)
