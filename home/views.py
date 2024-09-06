@@ -48,6 +48,7 @@ class IndexView(View):
 		for i, obj in enumerate(Article.objects.all()[:3], start=1):
 			context.update(language_switcher(obj, lang, "article", f"{i}"))
 			context.update({f'article_image{i}':obj.thumbnail})
+			context.update({f'article_slug{i}':obj.slug})
 
 
 		return render(request, 'home/index.html', context=context)

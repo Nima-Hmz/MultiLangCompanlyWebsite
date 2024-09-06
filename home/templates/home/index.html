@@ -164,7 +164,7 @@
           <div class="card-body text-justify">
             <h5 class="card-title">{{ article_title3 }}</h5>
             <p class="card-text">{{ article_description3|truncatewords:10|safe }}</p>
-            <a href="#" class="btn btn-yellow">{% if current_lang == 'fa' %}مشاهده بیشتر{% else %}see more{% endif %}</a>
+            <a href="{% url 'articles:article_detail' article_slug1 %}?lang={{ current_lang }}" class="btn btn-yellow">{% if current_lang == 'fa' %}مشاهده بیشتر{% else %}see more{% endif %}</a>
           </div>
         </div>
       </div>
@@ -174,7 +174,7 @@
           <div class="card-body text-justify">
             <h5 class="card-title">{{ article_title2 }}</h5>
             <p class="card-text">{{ article_description2|truncatewords:10|safe }}</p>
-            <a href="#" class="btn btn-yellow">{% if current_lang == 'fa' %}مشاهده بیشتر{% else %}see more{% endif %}</a>
+            <a href="{% url 'articles:article_detail' article_slug2 %}?lang={{ current_lang }}" class="btn btn-yellow">{% if current_lang == 'fa' %}مشاهده بیشتر{% else %}see more{% endif %}</a>
           </div>
         </div>
       </div>
@@ -184,12 +184,12 @@
           <div class="card-body text-justify">
             <h5 class="card-title">{{ article_title1 }}</h5>
             <p class="card-text">{{ article_description1|truncatewords:10|safe }}</p>
-            <a href="#" class="btn btn-yellow">{% if current_lang == 'fa' %}مشاهده بیشتر{% else %}see more{% endif %}</a>
+            <a href="{% url 'articles:article_detail' article_slug3 %}?lang={{ current_lang }}" class="btn btn-yellow">{% if current_lang == 'fa' %}مشاهده بیشتر{% else %}see more{% endif %}</a>
           </div>
         </div>
       </div>
       <div class="col-12 d-flex justify-content-left px-5 mt-md-5">
-        <a href="#" class="btn btn-yellow">{% if current_lang == 'fa' %}مشاهده همه مقالات{% else %}more Articles{% endif %}</a>
+        <a href="{% url 'articles:article_list' %}?lang={{ current_lang }}" class="btn btn-yellow">{% if current_lang == 'fa' %}مشاهده همه مقالات{% else %}more Articles{% endif %}</a>
       </div>
     </div>
     <!-- end maghalat -->
