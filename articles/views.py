@@ -8,11 +8,6 @@ from .models import Article
 
 class ArticleListView(View):
 	def get(self, request):
-		lang = request.GET.get('lang', 'fa')
-		valid_langs = ['en', 'fa']
-		if lang not in valid_langs:
-			lang = 'fa'
-
 		articles = Article.objects.filter(status=True)
 		paginator = Paginator(articles, 6)
 		page = request.GET.get('page')
