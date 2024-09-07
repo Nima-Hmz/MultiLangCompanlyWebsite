@@ -34,8 +34,8 @@
                 {% endif %}
             {% endfor %}
 
-            <nav aria-label="Page navigation example">
-              <ul class="pagination">
+            <div aria-label="Page navigation example pb-5">
+              <div class="pagination d-flex justify-content-center">
                 <li class="page-item">
 
                 {% if article_list1.has_previous %}
@@ -61,19 +61,10 @@
                 </li>
                 {% endif %}
 
-              </ul>
-            </nav>
+              </div>
+            </>
 
-            <!-- Add this CSS to style the background -->
-            <style>
-              .page-link {
-                background-color: #28433f;;
-                color: white; /* Adjust the text color for readability */
-              }
-              .page-link:hover {
-                background-color: darkgreen; /* Optional hover effect */
-              }
-            </style>
+            
 
         </main>
 {% endblock %}

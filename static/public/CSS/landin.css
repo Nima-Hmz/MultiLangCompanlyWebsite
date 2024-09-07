@@ -18,7 +18,7 @@
   margin-right: -130px;
 }
 .card-img-top {
-  max-height: 305px;
+  height: 305px;
 }
 .card {
   background-color: #50613bff;
@@ -42,6 +42,16 @@
 .list-group-ul a {
   color: white;
   text-decoration: none;
+}
+.page-link {
+  background-color: #28433f;;
+  color: white; /* Adjust the text color for readability */
+}
+.page-link:hover {
+  background-color: darkgreen; /* Optional hover effect */
+}
+.padding-right{
+  margin-right: 2rem!important;
 }
 @media (max-width: 480px) {
   .photo-section {
