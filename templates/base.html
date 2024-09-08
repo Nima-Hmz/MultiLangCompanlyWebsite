@@ -146,11 +146,13 @@
           {{contact_location|safe}}
       </div>
 
+
       <!-- A&N Group BADGE -->
       <div class="col-12 d-flex justify-content-center text-light pt-3 bg-green">
         <p>
-          <a class="text-light text-decoration-none" href="https://aliafshani.github.io/CV/">ساخته شده در A&N
-            Group</a>
+          <a class="text-light text-decoration-none" href="https://aliafshani.github.io/CV/">{% if current_lang == 'fa' %}ساخته شده در A&N
+            Group{% else %}Created by A&N
+            Group{% endif %}</a>
         </p>
       </div>
       <!-- finish A&N Group BADGE -->
