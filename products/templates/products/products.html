@@ -12,9 +12,9 @@
             {% for cat in root_categories %}
                 {% if current_lang == 'fa' %}
                     <div class="col-12 mb-5 col-md-4">
-                        <div class="card mx-auto col-10 border-0">
+                        <div class="card2 bg-green-light mx-auto col-10 border-0">
                             <img src="{{cat.image.url}}" class="card-img-top" alt="...">
-                            <div class="card-body text-justify">
+                            <div class="card-body pb-3 text-justify">
                                 <h5 class="card-title">{{ cat.fa_title }}</h5>
                                 <p class="card-text">{{ cat.fa_description|truncatewords:50|safe }}</p>
                                 <a href="{% url 'products:product_list' cat.slug %}?lang={{ current_lang }}" class="btn btn-yellow">مشاهده بیشتر</a>

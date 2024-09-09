@@ -10,11 +10,7 @@ let is_show = false
 if (document.dir === "rtl") {
     navLogo.style.left = " 17px";
     menuButton.style.right = "0px";
-// imgBorder.style.display = "inline-block"
-    // imgNumber1.style.display = "inline-block!important"
 } else if (document.dir === "ltr") {
-    // imgBorder.style.display = "none"
-    // imgNumber1.style.display = "none"
     navLogo.style.right = " 17px"
     menuButton.style.left = "0px";
 }
@@ -22,7 +18,6 @@ if (document.dir === "rtl") {
 
 
 const onClickMenuButton = () => {
-    console.log("mio")
     if (window.innerWidth < 480) {
         if (is_show === false) {
             blurBackground.style.height = "95dvh"

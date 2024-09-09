@@ -14,7 +14,7 @@ body {
   border-radius: 1rem;
   text-align: center;
   font-size: 18px;
-  background: #50613bff;
+  background: var(--dark-slate-gray);
   display: flex;
   justify-content: center;
   align-items: center;

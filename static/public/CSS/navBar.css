@@ -2,6 +2,7 @@
 @import url(Helpers/variables.css);
 
 .nav {
+  right: 0;
   width: 100%;
   background-color: var(--dark-slate-gray);
   display: flex;

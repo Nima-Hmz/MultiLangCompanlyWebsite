@@ -17,12 +17,19 @@
   margin-top: -50px;
   margin-right: -130px;
 }
+.img-number-2{
+  max-width: 300px;
+}
 .card-img-top {
   height: 305px;
 }
 .card {
-  background-color: #50613bff;
+  background-color: var(--dark-slate-gray);;
   color: white;
+  border-radius: 1rem;
+}
+.card2 {
+  border-radius: 1rem;
 }
 .aboutUsImg {
   margin-inline: auto;
@@ -48,10 +55,14 @@
   color: white; /* Adjust the text color for readability */
 }
 .page-link:hover {
-  background-color: darkgreen; /* Optional hover effect */
+  background-color: var(--citron)!important ;
+  color: white;
 }
 .padding-right{
   margin-right: 2rem!important;
+}
+.table{
+  background-color: #28433f!important;
 }
 @media (max-width: 480px) {
   .photo-section {

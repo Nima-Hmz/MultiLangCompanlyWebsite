@@ -86,7 +86,7 @@
       <div class="col-12 col-md-4">
         <div class="col-10 text-center text-md-right mx-auto mx-md-0">
           <h3 class="f-yekanTitr mt-5 mx-5 text-light">{{contact_title}}</h3>
-          <ul class="list-group-ul mt-4">
+          <ul class="list-group-ul p-0 mt-4">
             <li>
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-telephone"
                 viewBox="0 0 16 16">
@@ -120,7 +120,7 @@
       <div class="col-12 col-md-4 text-center">
         <div class="col-10 mx-auto">
           <h3 class="f-yekanTitr mt-5 mx-5 text-light">{% if current_lang == 'fa' %}لینک های مفید{% else %}Quick Access{% endif %}</h3>
-          <ul class="list-group-ul mt-4">
+          <ul class="list-group-ul p-0 mt-4">
             <li>
               <a href="{% url 'home:aboutus' %}?lang={{current_lang}}">{{ about_title }}</a>
             </li>

@@ -11,9 +11,9 @@
             {% for article in article_list1 %}
                 {% if current_lang == 'fa' %}
                 <div class="col-12 mb-5 col-md-4">
-                    <div class="card mx-auto col-10 border-0">
+                    <div class="card2 bg-green-light mx-auto col-10 border-0">
                         <img src="{{article.thumbnail.url}}" class="card-img-top" alt="...">
-                        <div class="card-body text-justify">
+                        <div class="card-body pb-3 text-justify">
                             <h5 class="card-title">{{ article.fa_title }}</h5>
                             <p class="card-text">{{ article.fa_description|truncatewords:10|safe }}</p>
                             <a href="{% url 'articles:article_detail' article.slug %}?lang=fa" class="btn btn-yellow">مشاهده بیشتر</a>
@@ -34,8 +34,8 @@
                 {% endif %}
             {% endfor %}
 
-            <div aria-label="Page navigation example pb-5">
-              <div class="pagination d-flex justify-content-center">
+            <div aria-label="Page navigation example ">
+              <div class="pagination d-flex justify-content-center mb-5 pb-5">
                 <li class="page-item">
 
                 {% if article_list1.has_previous %}
