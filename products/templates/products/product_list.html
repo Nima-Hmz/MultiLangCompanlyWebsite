@@ -4,48 +4,38 @@
 {% block content %} 
 
 
-        <main class="row mt-5 pt-5">
-            <div class="col-12 col-md-8 mx-auto">
-                <!-- start table -->
-                <table class="table  table-striped table-hover px-4">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">{% if current_lang == 'fa' %}نام محصول{% else %}product title{% endif %}</th>
-                            <th scope="col">{% if current_lang == 'fa' %}ابعاد{% else %}product size{% endif %}</th>
-                            <th scope="col">{% if current_lang == 'fa' %}مشاهده جزییات{% else %}see more{% endif %}</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    	{% for product in products %}
-                    		{% if current_lang == 'fa' %}
-		                        <tr>
-		                            <th scope="row">{{ forloop.counter }}</th>
-		                            <td>{{ product.fa_title }}</td>
-		                            <td>{{ product.size }}</td>
-		                            <td>
-		                                <a href="{% url 'products:product_detail' product.slug %}?lang={{ current_lang }}">مشاهده بیشتر</a>
-		                            </td>
-		                            </a>
-		                        </tr>
-	                        {% else %}
-		                        <tr>
-		                            <th scope="row">{{ forloop.counter }}</th>
-		                            <td>{{ product.en_title }}</td>
-		                            <td>{{ product.size }}</td>
-		                            <td>
-		                                <a href="{% url 'products:product_detail' product.slug %}?lang={{ current_lang }}">see more</a>
-		                            </td>
-		                            </a>
-		                        </tr>
-	                        {% endif %}
-                        {% endfor %}
 
-                    </tbody>
-                </table>
-                <!-- end table -->
+<main class="row text-center text-white">
+            <div class="col-12 mt-5 pt-5">
+                <h2 class="py-5">{{ cat_title }}</h2>
             </div>
-        </main>
 
+            {% for product in products %}
+                {% if current_lang == 'fa' %}
+                    <div class="col-12 mb-5 col-md-4">
+                        <div class="card2 bg-green-light mx-auto col-10 border-0">
+                            <img src="{{product.image.url}}" class="card-img-top" alt="...">
+                            <div class="card-body pb-3 text-justify">
+                                <h5 class="card-title">{{ product.fa_title }}</h5>
+                                <p class="card-text">{{ product.fa_description|truncatewords:50|safe }}</p>
+                                <a href="{% url 'products:product_detail' product.slug %}?lang={{ current_lang }}" class="btn btn-yellow">مشاهده بیشتر</a>
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="col-12 mb-5 col-md-4">
+                        <div class="card2 bg-green-light mx-auto col-10 border-0">
+                            <img src="{{product.image.url}}" class="card-img-top" alt="...">
+                            <div class="card-body text-justify">
+                                <h5 class="card-title">{{ product.en_title }}</h5>
+                                <p class="card-text">{{ product.en_description|truncatewords:50|safe }}</p>
+                                <a href="{% url 'products:product_detail' product.slug %}?lang={{ current_lang }}" class="btn btn-yellow">see more</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+
+        </main>
 
 {% endblock %}

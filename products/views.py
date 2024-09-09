@@ -38,6 +38,7 @@ class ProductListView(View):
 		context = {
 
 			'products':products,
+			'cat_title':category.get_title(lang),
 			'pro_temp':True
 
 		}
