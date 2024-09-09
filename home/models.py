@@ -110,3 +110,16 @@ class Services(models.Model):
 	class Meta:
 		verbose_name = ("خدمات")
 		verbose_name_plural = ('خدمات')
+
+
+class Updating(models.Model):
+	status = models.BooleanField(default=False, verbose_name='فعال کردن وضعیت توسعه')
+	title = models.CharField(max_length=200, verbose_name='عنوان')
+	description = HTMLField(verbose_name='توضیحات')
+
+	def __str__(self):
+		return self.title
+
+	class Meta:
+		verbose_name = ("وضعیت توسعه")
+		verbose_name_plural = ('وضعیت توسعه')
