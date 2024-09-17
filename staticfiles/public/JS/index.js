@@ -7,11 +7,11 @@ let imgNumber1 = document.querySelector(".img-number1")
 if (document.dir === "rtl") {
     imgBorder.style.display = "inline-block"
     imgNumber2.style.display = "inline-block!important"  
-    imgNumber1.style.width = "210px"
+      imgNumber1.style.width = "210px"
 
 } else if (document.dir === "ltr") {
+    imgNumber1.style.width = "310px"
     imgBorder.style.display = "none"
-    imgNumber1.style.marginLeft= "-140px!important"
-    imgNumber1.style.marginRight= "0px"
+    imgNumber2.style.display = "none"
 }
 
