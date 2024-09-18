@@ -16,7 +16,6 @@ if (document.dir === "rtl") {
 }
 
 
-
 const onClickMenuButton = () => {
     if (window.innerWidth < 480) {
         if (is_show === false) {
@@ -24,8 +23,7 @@ const onClickMenuButton = () => {
             navList.style.display = "flex"
             navList.style.height = "470px"
             is_show = true
-        }
-        else {
+        } else {
             window.document.body.style.overflowY = "scroll"
             blurBackground.style.height = "0px";
             navList.style.display = "none"
@@ -34,28 +32,19 @@ const onClickMenuButton = () => {
 
         }
 
-    }
-    else return
+    } else return
 
 }
-
 
 
 menuButton.addEventListener("click", onClickMenuButton)
 
 
-
-
-
-
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: 1,
     spaceBetween: 30,
-    loop: true,
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
+    loop: false,
+
     breakpoints: {
         '730': {
             slidesPerView: 4,

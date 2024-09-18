@@ -1,7 +1,8 @@
 {% load static %}
 
 <!doctype html>
-<html lang="{% if current_lang == 'fa' %}fa{% else %}en{% endif %}" dir="{% if current_lang == 'fa' %}rtl{% else %}ltr{% endif %}">
+<html lang="{% if current_lang == 'fa' %}fa{% else %}en{% endif %}"
+  dir="{% if current_lang == 'fa' %}rtl{% else %}ltr{% endif %}">
 <!-- <html dir="rtl"> -->
 
 <head>
@@ -10,7 +11,8 @@
   <title>paya afzar felez</title>
   <link rel="icon" href="{% static 'public/Images/logo.jpg' %}">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="{% static 'public/JS/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/css/bootstrap.min.css' %}">
+  <link rel="stylesheet"
+    href="{% static 'public/JS/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/css/bootstrap.min.css' %}">
   <link rel="stylesheet" href="{% static 'public/CSS/index.css' %}">
 </head>
 
@@ -25,7 +27,7 @@
           <input type="checkbox" id="nav-check">
           <div class="nav-header">
             <div class="nav-title">
-              <img class="nav-logo" src="{% static './public/Images/payalogo-1.png' %}" alt="">
+              <a href=""><img class="nav-logo" src="{% static './public/Images/payalogo-1.png' %}" alt="paya afzar felez logo"></a>
             </div>
           </div>
           <div class="nav-btn">
@@ -36,21 +38,29 @@
             </label>
           </div>
           <ul class="nav-list">
-            <li onclick="onCloseMenu()" class="navItem"><a class="a-text {% if main_index == True %}active-li{% endif %}" href="{% url 'home:index' %}?lang={{ current_lang }}">{% if current_lang == 'fa' %}خانه{% else %}home{% endif %}
+            <li onclick="onCloseMenu()" class="navItem"><a
+                class="a-text {% if main_index == True %}active-li{% endif %}"
+                href="{% url 'home:index' %}?lang={{ current_lang }}">{% if current_lang == 'fa' %}خانه{% else %}home{% endif %}
               </a></li>
-            <li onclick="onCloseMenu()" class="navItem"><a class="a-text {% if pro_temp == True %}active-li{% endif %}" href="{% if main_index %}#products1{% else %}{% url 'products:products' %}?lang={{current_lang}}{% endif %}">{% if current_lang == 'fa' %}محصولات{% else %}Products{% endif %}</a></li>
+            <li onclick="onCloseMenu()" class="navItem"><a class="a-text {% if pro_temp == True %}active-li{% endif %}"
+                href="{% if main_index %}#products1{% else %}{% url 'products:products' %}?lang={{current_lang}}{% endif %}">{%if current_lang == 'fa' %}محصولات{% else %}Products{% endif %}</a></li>
 
             {% if main_index == True %}<li onclick="onCloseMenu()" class="navItem"><a class="a-text" href="#jobs">{{ services_title }}</a></li>{% endif %}
-            
-            <li onclick="onCloseMenu()" class="navItem"><a class="a-text {% if article_temp == True %}active-li{% endif %}" href="{% url 'articles:article_list' %}?lang={{ current_lang }}">{% if current_lang == 'fa' %}مقالات{% else %}Articles{% endif %}</a></li>
-            <li onclick="onCloseMenu()" class="navItem"><a class="a-text {% if about_temp == True %}active-li{% endif %}" href="{% url 'home:aboutus' %}?lang={{current_lang}}">{{ about_title }}</a></li>
+
+            <li onclick="onCloseMenu()" class="navItem"><a
+                class="a-text {% if article_temp == True %}active-li{% endif %}"
+                href="{% url 'articles:article_list' %}?lang={{ current_lang }}">{% if current_lang == 'fa' %}مقالات{% else %}Articles{% endif %}</a></li>
+            <li onclick="onCloseMenu()" class="navItem"><a
+                class="a-text {% if about_temp == True %}active-li{% endif %}"
+                href="{% url 'home:aboutus' %}?lang={{current_lang}}">{{ about_title }}</a></li>
             <li class="navItem">
               <a class="dropdown-toggle a-text" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 {% if current_lang == 'fa' %}زبان{% else %}language{% endif %}
               </a>
               <ul class="dropdown-menu dropdown-menu-dark">
                 <li onclick="onCloseMenu()">
-                  <a class="dropdown-item {% if current_lang == 'fa' %}active{% else %}{% endif %}" href="?lang=fa">فارسی
+                  <a class="dropdown-item {% if current_lang == 'fa' %}active{% else %}{% endif %}"
+                    href="?lang=fa">فارسی
                     <img class="mr-5" style="border-radius: 50%;" width="32"
                       alt="The flag of the Islamic Republic of Iran"
                       src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Flag_of_Iran.svg/32px-Flag_of_Iran.svg.png?20140922081832">
@@ -65,6 +75,11 @@
                 </li>
               </ul>
             </li>
+            <li onclick="onCloseMenu()" class="navItem"><a
+                    class="a-text {% if about_temp == True %}active-li{% endif %}"
+                    href="{% url 'home:aboutus' %}?lang={{current_lang}}">{{ about_title }}</a></li><li onclick="onCloseMenu()" class="navItem"><a
+                  class="a-text {% if about_temp == True %}active-li{% endif %}"
+                  href="{% url 'home:aboutus' %}?lang={{current_lang}}">{{ about_title }}</a></li>
           </ul>
         </nav>
       </div>
@@ -113,14 +128,15 @@
                   d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
                 <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
               </svg>
-                    {{contact_description}}
+              {{contact_description}}
             </li>
           </ul>
         </div>
       </div>
       <div class="col-12 col-md-4 text-center">
         <div class="col-10 mx-auto">
-          <h3 class="f-yekanTitr mt-5 mx-5 text-light">{% if current_lang == 'fa' %}لینک های مفید{% else %}Quick Access{% endif %}</h3>
+          <h3 class="f-yekanTitr mt-5 mx-5 text-light">{% if current_lang == 'fa' %}لینک های مفید{% else %}Quick
+            Access{% endif %}</h3>
           <ul class="list-group-ul p-0 mt-4">
             <li>
               <a href="{% url 'home:aboutus' %}?lang={{current_lang}}">{{ about_title }}</a>
@@ -130,7 +146,7 @@
               <a href="{% url 'articles:article_list' %}?lang={{ current_lang }}">{% if current_lang == 'fa' %}مقالات{% else %}Articles{% endif %}</a>
             </li>
             <li>
-              <a href="{% url 'products:products' %}?lang={{current_lang}}">{% if current_lang == 'fa' %}محصولات{% else %}Products{% endif %}</a>
+              <a href="{% url 'products:products' %}?lang={{current_lang}}">{% if current_lang == 'fa' %}محصولات{% else%}Products{% endif %}</a>
             </li>
             <li>
               <a href="#jobs">{{ services_title }}</a>
@@ -144,7 +160,7 @@
         {% else %}
         <h3 class="f-yekanTitr  mx-5 text-light">Location</h3>
         {% endif %}
-          {{contact_location|safe}}
+        {{contact_location|safe}}
       </div>
 
 

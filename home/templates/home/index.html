@@ -26,7 +26,7 @@
 <!-- end landing -->
 <!-- start swiper and khadamat -->
 <div class="row px-0 bg-green-light">
-  <div class=" col-12 pt-5 mb-5">
+  <div class=" col-12 pt-0 mb-5">
     <h2 class="text-white text-center mt-3 pt-5 pb-5 f-yekanTitr" id="products1">{% if current_lang == 'fa' %}دسته بندی
       محصولات ما{% else %}Product Categories{% endif %}</h2>
     <div id="products" class="swiper text-center  mySwiper">
@@ -92,7 +92,7 @@
         </div>
 
       </div>
-      <div class="swiper-pagination"></div>
+      <div class="swiper-pagination pt-5 mt-5"></div>
     </div>
     <div class="col-12 d-flex justify-content-left mt-3 px-3 mt-md-5">
       <a href="{% url 'products:products' %}?lang={{ current_lang }}" class="btn btn-yellow">{% if current_lang == 'fa'%} مشاهده دسته بندی همه محصولات{% else %}more categories{% endif %}</a>
@@ -104,7 +104,7 @@
 <!-- start khadamat -->
 <div class="row px-0 pt-3 pb-5  text-center text-white">
   <div class="col-12 pt-3">
-    <h2 id="jobs" class="f-yekanTitr mb-5">{{ services_title }}</h2>
+    <h2 id="jobs" class=" mt-5 mb-5">{{ services_title }}</h2>
   </div>
   <div class="col-12 col-md-4 pt-5">
     <p>

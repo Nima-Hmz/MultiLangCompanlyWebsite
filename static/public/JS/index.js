@@ -8,13 +8,8 @@ if (document.dir === "rtl") {
     imgBorder.style.display = "inline-block"
     imgNumber2.style.display = "inline-block!important"
     imgNumber1.style.width = "210px"
-    console.log("mio");
-
-    console.log(imgNumber1);
-
 } else if (document.dir === "ltr") {
     imgBorder.style.display = "none"
-    imgNumber1.style.marginLeft = "-140px!important"
-    imgNumber1.style.marginRight = "0px"
+    imgNumber1.style.marginLeft = "-115px"
 }
 

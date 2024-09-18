@@ -15,12 +15,13 @@
 .img-number1 {
   width: 200px;
   margin-top: -50px;
-  margin-right: -130px;
+  margin-right: -140px;
 }
 .img-number-2{
   max-width: 300px;
 }
 .card-img-top {
+  border-radius: 1rem 1rem 0 0;
   height: 305px;
 }
 .card {
@@ -67,5 +68,6 @@
 @media (max-width: 480px) {
   .photo-section {
     margin-top: 4rem;
+    justify-content: start;
   }
 }
