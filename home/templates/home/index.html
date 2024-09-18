@@ -95,8 +95,7 @@
       <div class="swiper-pagination"></div>
     </div>
     <div class="col-12 d-flex justify-content-left mt-3 px-3 mt-md-5">
-      <a href="{% url 'products:products' %}?lang={{ current_lang }}" class="btn btn-yellow">{% if current_lang == 'fa'
-        %} مشاهده دسته بندی همه محصولات{% else %}more categories{% endif %}</a>
+      <a href="{% url 'products:products' %}?lang={{ current_lang }}" class="btn btn-yellow">{% if current_lang == 'fa'%} مشاهده دسته بندی همه محصولات{% else %}more categories{% endif %}</a>
     </div>
   </div>
 </div>
@@ -158,8 +157,7 @@
       <div class="card-body pb-3 text-justify">
         <h5 class="card-title">{{ article_title3 }}</h5>
         <p class="card-text">{{ article_description3|truncatewords:10|safe }}</p>
-        <a href="{% url 'articles:article_detail' article_slug1 %}?lang={{ current_lang }}" class="btn btn-yellow">{% if
-          current_lang == 'fa' %}مشاهده بیشتر{% else %}see more{% endif %}</a>
+        <a href="{% url 'articles:article_detail' article_slug1 %}?lang={{ current_lang }}" class="btn btn-yellow">{% if current_lang == 'fa' %}مشاهده بیشتر{% else %}see more{% endif %}</a>
       </div>
     </div>
   </div>
@@ -169,8 +167,7 @@
       <div class="card-body pb-3 text-justify">
         <h5 class="card-title">{{ article_title2 }}</h5>
         <p class="card-text">{{ article_description2|truncatewords:10|safe }}</p>
-        <a href="{% url 'articles:article_detail' article_slug2 %}?lang={{ current_lang }}" class="btn btn-yellow">{% if
-          current_lang == 'fa' %}مشاهده بیشتر{% else %}see more{% endif %}</a>
+        <a href="{% url 'articles:article_detail' article_slug2 %}?lang={{ current_lang }}" class="btn btn-yellow">{% if current_lang == 'fa' %}مشاهده بیشتر{% else %}see more{% endif %}</a>
       </div>
     </div>
   </div>
@@ -180,14 +177,12 @@
       <div class="card-body pb-3 text-justify">
         <h5 class="card-title">{{ article_title1 }}</h5>
         <p class="card-text">{{ article_description1|truncatewords:10|safe }}</p>
-        <a href="{% url 'articles:article_detail' article_slug3 %}?lang={{ current_lang }}" class="btn btn-yellow">{% if
-          current_lang == 'fa' %}مشاهده بیشتر{% else %}see more{% endif %}</a>
+        <a href="{% url 'articles:article_detail' article_slug3 %}?lang={{ current_lang }}" class="btn btn-yellow">{% if current_lang == 'fa' %}مشاهده بیشتر{% else %}see more{% endif %}</a>
       </div>
     </div>
   </div>
   <div class="col-12 d-flex justify-content-left px-5 mt-md-5">
-    <a href="{% url 'articles:article_list' %}?lang={{ current_lang }}" class="btn btn-yellow">{% if current_lang ==
-      'fa' %}مشاهده همه مقالات{% else %}more Articles{% endif %}</a>
+    <a href="{% url 'articles:article_list' %}?lang={{ current_lang }}" class="btn btn-yellow">{% if current_lang == 'fa' %}مشاهده همه مقالات{% else %}more Articles{% endif %}</a>
   </div>
 </div>
 <!-- end maghalat -->
@@ -205,11 +200,9 @@
 </div>
 <!-- end aboutus section -->
 
-{% if current_lang == 'en' %}
 
 <script src="{% static '/public/JS/index.js' %}"></script>
 
-{% endif %}
 
 
 
