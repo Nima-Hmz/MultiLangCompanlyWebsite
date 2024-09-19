@@ -149,7 +149,7 @@
 <!-- start last maghalat -->
 <div class="row px-0 pt-5 pb-5 text-center bg-green-light text-white">
   <div id="notes" class="col-12 pt-3">
-    <h2 class="f-yekanTitr mb-5 ">{% if current_lang == 'fa' %}مقالات{% else %}Articles{% endif %}</h2>
+    <h2 class="f-yekanTitr mb-5 " id="articles1">{% if current_lang == 'fa' %}مقالات{% else %}Articles{% endif %}</h2>
   </div>
   <div class="col-12 mb-5 mb-md-0 col-md-4">
     <div class="card mx-auto col-10 border-0">
@@ -193,7 +193,7 @@
     <img class="aboutUsImg d-block mt-4 mx-auto" src="{{about_image.url}}" alt="">
   </div>
   <div id="aboutUs" class="col-12 col-md-7 text-center p-3 text-white">
-    <h2 class="f-yekanTitr pb-4">{{about_title}}</h2>
+    <h2 class="f-yekanTitr pb-4" id="aboutus1">{{about_title}}</h2>
     <p class="text">{{about_description|truncatewords:100|safe}}</p>
   </div>
 

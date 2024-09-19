@@ -49,37 +49,28 @@
 
             <li onclick="onCloseMenu()" class="navItem"><a
                 class="a-text {% if article_temp == True %}active-li{% endif %}"
-                href="{% url 'articles:article_list' %}?lang={{ current_lang }}">{% if current_lang == 'fa' %}مقالات{% else %}Articles{% endif %}</a></li>
+                href="{% if main_index == True %}#articles1{% else %}{% url 'articles:article_list' %}?lang={{ current_lang }}{% endif %}">{% if current_lang == 'fa' %}مقالات{% else %}Articles{% endif %}</a></li>
             <li onclick="onCloseMenu()" class="navItem"><a
                 class="a-text {% if about_temp == True %}active-li{% endif %}"
-                href="{% url 'home:aboutus' %}?lang={{current_lang}}">{{ about_title }}</a></li>
-            <li class="navItem">
-              <a class="dropdown-toggle a-text" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                {% if current_lang == 'fa' %}زبان{% else %}language{% endif %}
-              </a>
-              <ul class="dropdown-menu dropdown-menu-dark">
-                <li onclick="onCloseMenu()">
-                  <a class="dropdown-item {% if current_lang == 'fa' %}active{% else %}{% endif %}"
-                    href="?lang=fa">فارسی
-                    <img class="mr-5" style="border-radius: 50%;" width="32"
-                      alt="The flag of the Islamic Republic of Iran"
-                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Flag_of_Iran.svg/32px-Flag_of_Iran.svg.png?20140922081832">
-                  </a>
-                </li>
-                <li onclick="onCloseMenu()">
-                  <a class="dropdown-item {% if current_lang == 'en' %}active{% else %}{% endif %}" href="?lang=en">ENG
-                    <img style="border-radius: 50%;" width="32"
-                      alt="The flag of the Kingdom of Great Britain from 1707 to 1800."
-                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Flag_of_Great_Britain_%281707%E2%80%931800%29.svg/32px-Flag_of_Great_Britain_%281707%E2%80%931800%29.svg.png?20240117144422">
-                  </a>
-                </li>
-              </ul>
-            </li>
+                href="{% if main_index == True %}#aboutus1{% else %}{% url 'home:aboutus' %}?lang={{current_lang}}{% endif %}">{{ about_title }}</a></li>
+
+
+
+          {% if current_lang == "fa" %}
+
             <li onclick="onCloseMenu()" class="navItem"><a
-                    class="a-text {% if about_temp == True %}active-li{% endif %}"
-                    href="{% url 'home:aboutus' %}?lang={{current_lang}}">{{ about_title }}</a></li><li onclick="onCloseMenu()" class="navItem"><a
-                  class="a-text {% if about_temp == True %}active-li{% endif %}"
-                  href="{% url 'home:aboutus' %}?lang={{current_lang}}">{{ about_title }}</a></li>
+                    class="a-text"
+                    href="?lang=en">en</a></li>
+
+          {% else %}
+
+            <li onclick="onCloseMenu()" class="navItem"><a
+                  class="a-text"
+                  href="?lang=fa">fa</a></li>
+
+          {% endif %}
+
+
           </ul>
         </nav>
       </div>
