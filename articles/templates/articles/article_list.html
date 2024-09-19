@@ -15,7 +15,7 @@
                         <img src="{{article.thumbnail.url}}" class="card-img-top" alt="...">
                         <div class="card-body pb-3 text-justify">
                             <h5 class="card-title">{{ article.fa_title }}</h5>
-                            <p class="card-text">{{ article.fa_description|truncatewords:10|safe }}</p>
+                            <p class="card-text">{{ article.fa_description|truncatewords:15|safe }}</p>
                             <a href="{% url 'articles:article_detail' article.slug %}?lang=fa" class="btn btn-yellow">مشاهده بیشتر</a>
                         </div>
                     </div>
@@ -26,7 +26,7 @@
                         <img src="{{article.thumbnail.url}}" class="card-img-top" alt="...">
                         <div class="card-body text-justify">
                             <h5 class="card-title">{{ article.en_title }}</h5>
-                            <p class="card-text">{{ article.en_description|truncatewords:10|safe }}</p>
+                            <p class="card-text">{{ article.en_description|truncatewords:15|safe }}</p>
                             <a href="{% url 'articles:article_detail' article.slug %}?lang=en" class="btn btn-yellow">see more</a>
                         </div>
                     </div>

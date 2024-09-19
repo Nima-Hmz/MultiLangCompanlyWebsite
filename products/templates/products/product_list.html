@@ -17,7 +17,7 @@
                             <img src="{{product.image.url}}" class="card-img-top" alt="...">
                             <div class="card-body pb-3 text-justify">
                                 <h5 class="card-title">{{ product.fa_title }}</h5>
-                                <p class="card-text">{{ product.fa_description|truncatewords:50|safe }}</p>
+                                <p class="card-text">{{ product.fa_description|truncatewords:15|safe }}</p>
                                 <a href="{% url 'products:product_detail' product.slug %}?lang={{ current_lang }}" class="btn btn-yellow">مشاهده بیشتر</a>
                             </div>
                         </div>
@@ -28,7 +28,7 @@
                             <img src="{{product.image.url}}" class="card-img-top" alt="...">
                             <div class="card-body text-justify">
                                 <h5 class="card-title">{{ product.en_title }}</h5>
-                                <p class="card-text">{{ product.en_description|truncatewords:50|safe }}</p>
+                                <p class="card-text">{{ product.en_description|truncatewords:15|safe }}</p>
                                 <a href="{% url 'products:product_detail' product.slug %}?lang={{ current_lang }}" class="btn btn-yellow">see more</a>
                             </div>
                         </div>
