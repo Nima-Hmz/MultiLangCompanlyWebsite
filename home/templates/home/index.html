@@ -27,14 +27,14 @@
 <!-- start swiper and khadamat -->
 <div class="row px-0 bg-green-light">
   <div class=" col-12 pt-0 mb-5">
-    <h2 class="text-white text-center mt-3 pt-5 pb-5 f-yekanTitr" id="products1">{% if current_lang == 'fa' %}دسته بندی
+    <h2 class="text-white text-center mt-3 pb-5 " id="products1">{% if current_lang == 'fa' %}دسته بندی
       محصولات ما{% else %}Product Categories{% endif %}</h2>
     <div id="products" class="swiper text-center  mySwiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <div class="card col-12 mx-auto border-0">
             <img src="{{ category_image1.url }}" class="card-img-top" alt="...">
-            <div class="card-body text-justify">
+            <div class="card-body d-flex flex-column justify-content-around align-items-center text-justify">
               <h5 class="card-title">{{ category_title1 }}</h5>
               <p class="card-text">{{ category_description1|truncatewords:15|safe }}</p>
               <a href="{% url 'products:product_list' category_slug1 %}?lang={{ current_lang }}"
@@ -45,7 +45,7 @@
         <div class="swiper-slide">
           <div class="card col-12 mx-auto border-0">
             <img src="{{ category_image2.url }}" class="card-img-top" alt="...">
-            <div class="card-body text-justify">
+            <div class="card-body d-flex flex-column justify-content-around align-items-center text-justify">
               <h5 class="card-title">{{ category_title2 }}</h5>
               <p class="card-text">{{ category_description2|truncatewords:15|safe }}</p>
               <a href="{% url 'products:product_list' category_slug2 %}?lang={{ current_lang }}"
@@ -57,7 +57,7 @@
         <div class="swiper-slide">
           <div class="card col-12 mx-auto border-0">
             <img src="{{ category_image3.url }}" class="card-img-top" alt="...">
-            <div class="card-body text-justify">
+            <div class="card-body d-flex flex-column justify-content-around align-items-center text-justify">
               <h5 class="card-title">{{ category_title3 }}</h5>
               <p class="card-text">{{ category_description3|truncatewords:15|safe }}</p>
               <a href="{% url 'products:product_list' category_slug3 %}?lang={{ current_lang }}"
@@ -69,7 +69,7 @@
         <div class="swiper-slide">
           <div class="card col-12 mx-auto border-0">
             <img src="{{ category_image4.url }}" class="card-img-top" alt="...">
-            <div class="card-body text-justify">
+            <div class="card-body d-flex flex-column justify-content-around align-items-center text-justify">
               <h5 class="card-title">{{ category_title4 }}</h5>
               <p class="card-text">{{ category_description4|truncatewords:15|safe }}</p>
               <a href="{% url 'products:product_list' category_slug4 %}?lang={{ current_lang }}"
@@ -81,7 +81,7 @@
         <div class="swiper-slide">
           <div class="card col-12 mx-auto border-0">
             <img src="{{ category_image5.url }}" class="card-img-top" alt="...">
-            <div class="card-body text-justify">
+            <div class="card-body d-flex flex-column justify-content-around align-items-center text-justify">
               <h5 class="card-title">{{ category_title5 }}</h5>
               <p class="card-text">{{ category_description5|truncatewords:15|safe }}</p>
               <a href="{% url 'products:product_list' category_slug5 %}?lang={{ current_lang }}"
@@ -95,7 +95,7 @@
       <div class="swiper-pagination pt-5 mt-5"></div>
     </div>
     <div class="col-12 d-flex justify-content-left mt-3 px-3 mt-md-5">
-      <a href="{% url 'products:products' %}?lang={{ current_lang }}" class="btn btn-yellow">{% if current_lang == 'fa'%} مشاهده دسته بندی همه محصولات{% else %}more categories{% endif %}</a>
+      <a href="{% url 'products:products' %}?lang={{ current_lang }}" class="btn btn-yellow2">{% if current_lang == 'fa'%} مشاهده دسته بندی همه محصولات{% else %}more categories{% endif %}</a>
     </div>
   </div>
 </div>
@@ -149,12 +149,12 @@
 <!-- start last maghalat -->
 <div class="row px-0 pt-5 pb-5 text-center bg-green-light text-white">
   <div id="notes" class="col-12 pt-3">
-    <h2 class="f-yekanTitr mb-5 " id="articles1">{% if current_lang == 'fa' %}مقالات{% else %}Articles{% endif %}</h2>
+    <h2 class=" mb-5 " id="articles1">{% if current_lang == 'fa' %}مقالات{% else %}Articles{% endif %}</h2>
   </div>
   <div class="col-12 mb-5 mb-md-0 col-md-4">
     <div class="card mx-auto col-10 border-0">
       <img src="{{ article_image3.url }}" class="card-img-top" alt="...">
-      <div class="card-body pb-3 text-justify">
+      <div class="card-body d-flex flex-column justify-content-around align-items-center pb-3 text-justify">
         <h5 class="card-title">{{ article_title3 }}</h5>
         <p class="card-text">{{ article_description3|truncatewords:15|safe }}</p>
         <a href="{% url 'articles:article_detail' article_slug1 %}?lang={{ current_lang }}" class="btn btn-yellow">{% if current_lang == 'fa' %}مشاهده بیشتر{% else %}see more{% endif %}</a>
@@ -164,7 +164,7 @@
   <div class="col-12 mb-5 mb-md-0 col-md-4">
     <div class="card mx-auto col-10 border-0">
       <img src="{{ article_image2.url }}" class="card-img-top" alt="...">
-      <div class="card-body pb-3 text-justify">
+      <div class="card-body d-flex flex-column justify-content-around align-items-center pb-3 text-justify">
         <h5 class="card-title">{{ article_title2 }}</h5>
         <p class="card-text">{{ article_description2|truncatewords:15|safe }}</p>
         <a href="{% url 'articles:article_detail' article_slug2 %}?lang={{ current_lang }}" class="btn btn-yellow">{% if current_lang == 'fa' %}مشاهده بیشتر{% else %}see more{% endif %}</a>
@@ -174,7 +174,7 @@
   <div class="col-12 mb-5 mb-md-0 col-md-4">
     <div class="card  mx-auto col-10 border-0">
       <img src="{{ article_image1.url }}" class="card-img-top" alt="...">
-      <div class="card-body pb-3 text-justify">
+      <div class="card-body d-flex flex-column justify-content-around align-items-center pb-3 text-justify">
         <h5 class="card-title">{{ article_title1 }}</h5>
         <p class="card-text">{{ article_description1|truncatewords:15|safe }}</p>
         <a href="{% url 'articles:article_detail' article_slug3 %}?lang={{ current_lang }}" class="btn btn-yellow">{% if current_lang == 'fa' %}مشاهده بیشتر{% else %}see more{% endif %}</a>
@@ -182,7 +182,7 @@
     </div>
   </div>
   <div class="col-12 d-flex justify-content-left px-5 mt-md-5">
-    <a href="{% url 'articles:article_list' %}?lang={{ current_lang }}" class="btn btn-yellow">{% if current_lang == 'fa' %}مشاهده همه مقالات{% else %}more Articles{% endif %}</a>
+    <a href="{% url 'articles:article_list' %}?lang={{ current_lang }}" class="btn btn-yellow2">{% if current_lang == 'fa' %}مشاهده همه مقالات{% else %}more Articles{% endif %}</a>
   </div>
 </div>
 <!-- end maghalat -->
@@ -193,7 +193,7 @@
     <img class="aboutUsImg d-block mt-4 mx-auto" src="{{about_image.url}}" alt="">
   </div>
   <div id="aboutUs" class="col-12 col-md-7 text-center p-3 text-white">
-    <h2 class="f-yekanTitr pb-4" id="aboutus1">{{about_title}}</h2>
+    <h2 class=" pb-4" id="aboutus1">{{about_title}}</h2>
     <p class="text">{{about_description|truncatewords:100|safe}}</p>
   </div>
 

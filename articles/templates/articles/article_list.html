@@ -13,7 +13,7 @@
                 <div class="col-12 mb-5 col-md-4">
                     <div class="card2 bg-green-light mx-auto col-10 border-0">
                         <img src="{{article.thumbnail.url}}" class="card-img-top" alt="...">
-                        <div class="card-body pb-3 text-justify">
+                        <div class="card-body d-flex flex-column justify-content-around align-items-center pb-3 text-justify">
                             <h5 class="card-title">{{ article.fa_title }}</h5>
                             <p class="card-text">{{ article.fa_description|truncatewords:15|safe }}</p>
                             <a href="{% url 'articles:article_detail' article.slug %}?lang=fa" class="btn btn-yellow">مشاهده بیشتر</a>
@@ -24,7 +24,7 @@
                 <div class="col-12 mb-5 col-md-4">
                     <div class="card2 bg-green-light mx-auto col-10 border-0">
                         <img src="{{article.thumbnail.url}}" class="card-img-top" alt="...">
-                        <div class="card-body text-justify">
+                        <div class="card-body d-flex flex-column justify-content-around align-items-center text-justify">
                             <h5 class="card-title">{{ article.en_title }}</h5>
                             <p class="card-text">{{ article.en_description|truncatewords:15|safe }}</p>
                             <a href="{% url 'articles:article_detail' article.slug %}?lang=en" class="btn btn-yellow">see more</a>

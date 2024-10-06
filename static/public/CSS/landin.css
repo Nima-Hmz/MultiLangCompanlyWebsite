@@ -22,14 +22,16 @@
 }
 .card-img-top {
   border-radius: 1rem 1rem 0 0;
-  height: 305px;
+  height: 250px;
 }
 .card {
   background-color: var(--dark-slate-gray);;
   color: white;
+  height: 490px;
   border-radius: 1rem;
 }
 .card2 {
+  height: 420px;
   border-radius: 1rem;
 }
 .aboutUsImg {
